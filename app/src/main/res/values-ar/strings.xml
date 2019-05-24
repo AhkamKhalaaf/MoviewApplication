@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">  افلام </string>
+    <string name="hintsearch"> بحث ....</string>
+    <string name="nodata">لا توجد نتائج بحث .. حاول ب اسم اخر </string>
+    <string name="nointernet">لا يوجد اتصال بالانترنت</string>
+
+</resources>

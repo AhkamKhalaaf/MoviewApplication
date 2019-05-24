@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Movies </string>
+    <string name="hintsearch">Search ....</string>
+    <string name="nodata">there is not data , try with anther name </string>
+    <string name="nointernet">No internet connection</string>
+
+</resources>

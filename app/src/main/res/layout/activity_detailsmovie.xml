@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+<data>
+<variable
+    name="Mydatamovie"
+    type="com.example.moviewapplication.models.Apiresponse.OneMovie"/>
+</data>
+<androidx.core.widget.NestedScrollView
+    android:paddingBottom="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".view.DetailsmovieActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:theme="@style/Mytoolbarbackarrow"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content">
+            <TextView
+
+                 android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@{Mydatamovie.title}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              />
+        </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+            <ImageView
+                android:scaleType="fitXY"
+                android:imageurlpaid="@{Mydatamovie.poster_path}"
+                 android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:background="@drawable/bottomshadow"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:textStyle="bold"
+                        android:text="@{Mydatamovie.title}"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="end|left"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                         android:textStyle="bold"
+                        android:gravity="right|end"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:text="@{Mydatamovie.release_date}"                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="5dp"
+            android:textSize="12dp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="0.5"
+                android:text="vote_count"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.vote_count)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="id"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.id)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="video"
+                android:layout_weight="0.5"
+                 android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.video)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="vote_average"
+                 android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.vote_average)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="popularity"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.popularity)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="poster_path"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.original_language)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="original_language"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.original_language)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="original_title"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.original_title)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="genre_ids"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.genre_ids)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="backdrop_path"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.5"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.backdrop_path)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="adult"
+                android:layout_marginRight="5dp"
+                 android:layout_weight="0.5"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.adult)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="overview"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:text="@{String.valueOf(Mydatamovie.overview)}"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+</layout>

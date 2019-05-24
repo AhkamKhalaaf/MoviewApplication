@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+
+</data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|top|center"
+        android:background="@color/colorAccent"
+        tools:context=".view.MoviesFragment">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbarhome"
+    android:contentInsetLeft="0dp"
+    android:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetEnd="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetEnd="0dp"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</androidx.appcompat.widget.Toolbar>
+        <LinearLayout
+            android:layout_below="@+id/toolbarhome"
+            android:layout_width="match_parent"
+            android:gravity="start|center|center_vertical"
+            android:layout_margin="20dp"
+            android:id="@+id/toplinearlayout"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:background="@drawable/searchbackground"
+            android:layout_height="45dp"
+            android:paddingLeft="5dp">
+            <AutoCompleteTextView
+                android:drawablePadding="5dp"
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:gravity="top|start"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:background="@null"
+                android:inputType="text"
+                android:drawableStart="@drawable/ic_search"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintsearch"
+                android:drawableLeft="@drawable/ic_search" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/toplinearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                 android:layout_width="match_parent"
+                android:id="@+id/datalayout"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycerviewsearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/nodata"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="@string/nodata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:id="@+id/loading"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+                <com.github.ybq.android.spinkit.SpinKitView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/spin_kit"
+                    style="@style/SpinKitView.Large.WanderingCubes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:SpinKit_Color="@color/colorPrimary" />
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/nonternet"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="@string/nointernet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
